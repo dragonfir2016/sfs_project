@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_more_than_5_books_can_be_taken_home</fullName>
+    <active>true</active>
+    <description>No more than 5 books can be taken home (except for VIPs - up to 15 books).</description>
+    <errorConditionFormula>IF ( TEXT (Reader__r.SubscriptionType__c) = &apos;VIP&apos;,
+ Reader__r.NumberOfHoldBooks__c  &gt; 15, Reader__r.NumberOfHoldBooks__c &gt; 5)</errorConditionFormula>
+    <errorMessage>Exceeded limit of books to take home.</errorMessage>
+</ValidationRule>

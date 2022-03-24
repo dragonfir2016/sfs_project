@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_more_than_2_months_of_hold_allowed</fullName>
+    <active>true</active>
+    <description>no more than 2 months of rent are allowed (except for VIPs - up to 1 year)</description>
+    <errorConditionFormula>IF ( TEXT (Reader__r.SubscriptionType__c)  = &apos;VIP&apos;,  
+DaysOfHoldAllowed__c &gt; 365, DaysOfHoldAllowed__c &gt; 61)</errorConditionFormula>
+    <errorMessage>Days of hold allowed exceed maximum possible period.</errorMessage>
+</ValidationRule>
