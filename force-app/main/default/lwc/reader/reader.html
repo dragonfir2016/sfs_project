@@ -1,0 +1,14 @@
+<template>
+    <div style="height: 300px;">
+        <template if:true={data}>
+            <lightning-datatable
+                    key-field="id"
+                    data={data.data}
+                    columns={columns}>
+            </lightning-datatable>
+        </template>
+    </div>
+    <div>
+        <lightning-button label="Refresh" onclick={showToast}></lightning-button>
+    </div>
+</template>
